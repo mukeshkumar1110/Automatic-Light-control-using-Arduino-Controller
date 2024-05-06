@@ -63,6 +63,7 @@ LDR Features of LDR are as follows:
 
 
 ## PROGRAM:
+```
 int sensorPin = A0; 
 int sensorValue = 0; 
 void setup() 
@@ -87,6 +88,8 @@ void loop()
   delay(500);
   }
 }
+
+```
 
 ## CIRCUIT DIAGRAM:
 ![Screenshot 2024-05-06 104911](https://github.com/mukeshkumar1110/Automatic-Light-control-using-Arduino-Controller/assets/152305679/a96a5904-6eef-4d8f-826d-c05387a0d2cc)
