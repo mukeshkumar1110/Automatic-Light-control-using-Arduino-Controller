@@ -65,39 +65,37 @@ LDR Features of LDR are as follows:
 
 ## PROGRAM:
 ```
-int sensorPin = A0; 
-int sensorValue = 0; 
-void setup() 
+int sensorPin = A0; // select the input pin for the LDR
+int sensorValue = 0; // variable to store the value coming from the sensor
+int led = 13;
+void setup() { // declare the ledPin as an OUTPUT:
+pinMode(led, OUTPUT);
+Serial.begin(9600); }
+void loop()
 {
-Serial.begin(9600); 
-pinMode(13, OUTPUT);
-}
-void loop() 
+sensorValue = analogRead(sensorPin);
+Serial.println(sensorValue);
+if (sensorValue < 100)
 {
-  sensorValue = analogRead(sensorPin);
-  Serial.print("OUTPUT:");
-  Serial.println(sensorValue); 
-  delay(500);
-  if(sensorValue<=400)
-  {
-  digitalWrite(13, HIGH);  
-  delay(500);
-  }
-  else
-  {
-  digitalWrite(13, LOW);  
-  delay(500);
-  }
+Serial.println("LED light on");
+digitalWrite(led,HIGH);
+delay(1000);
 }
-
+else
+{
+digitalWrite(led,LOW);
+Serial.println("LED light off");
+delay(1000);
+}
+}
 ```
 
 ## CIRCUIT DIAGRAM:
-![Screenshot 2024-05-06 104911](https://github.com/mukeshkumar1110/Automatic-Light-control-using-Arduino-Controller/assets/152305679/a96a5904-6eef-4d8f-826d-c05387a0d2cc)
+![Screenshot 2025-03-18 112953](https://github.com/user-attachments/assets/4e82ea4e-8f8f-436d-a66a-a457c23de235)
 
 
 ## OUTPUT:
-![Screenshot 2024-05-06 104922](https://github.com/mukeshkumar1110/Automatic-Light-control-using-Arduino-Controller/assets/152305679/ee56c832-057e-4bd8-b101-7947656a8c80)
+![WhatsApp Image 2025-03-13 at 11 54 42_03b251d2](https://github.com/user-attachments/assets/bf15232b-588e-41e9-a0cd-b825c31163e1)
 
 
 ## RESULT:
